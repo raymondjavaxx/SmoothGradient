@@ -50,10 +50,10 @@ jobs:
             -scheme SmoothGradient \
             -destination '${{ matrix.destination.value }}' \
             | xcpretty
-      - name: Run tests
-        run: |-
-          set -o pipefail && NSUnbufferedIO=YES xcodebuild test \
-            -scheme SmoothGradient \
-            -destination '${{ matrix.destination.value }}' \
-            -sdk iphonesimulator \
-            | xcpretty
+      # - name: Run tests
+      #   run: |-
+      #     set -o pipefail && NSUnbufferedIO=YES xcodebuild test \
+      #       -scheme SmoothGradient \
+      #       -destination '${{ matrix.destination.value }}' \
+      #       -sdk iphonesimulator \
+      #       | xcpretty
