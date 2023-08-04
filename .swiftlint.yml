@@ -23,7 +23,7 @@ opt_in_rules:
   - identical_operands
   - implicit_return
   - implicitly_unwrapped_optional
-  - missing_docs
+  # - missing_docs
   - number_separator
   - operator_usage_whitespace
   - overridden_super_call
