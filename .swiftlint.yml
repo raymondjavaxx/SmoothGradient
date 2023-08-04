@@ -1,0 +1,81 @@
+included:
+  - Sources
+  - Tests
+
+opt_in_rules:
+  - attributes
+  - closure_spacing
+  - collection_alignment
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - empty_count
+  - empty_string
+  - file_header
+  - file_name
+  - file_name_no_space
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping
+  - identical_operands
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - missing_docs
+  - number_separator
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prohibited_interface_builder
+  - sorted_first_last
+  - toggle_bool
+  - weak_delegate
+  - yoda_condition
+
+analyzer_rules:
+  - capture_variable
+  - typesafe_array_init
+  - unused_declaration
+  - unused_import
+
+identifier_name:
+  min_length: 2
+  excluded:
+    - r
+    - g
+    - b
+    - a
+    - c
+    - x
+    - y
+    - t
+
+excluded:
+  - ".build"
+
+file_header:
+  required_pattern: |
+      \/\/
+      \/\/  SWIFTLINT_CURRENT_FILENAME
+      \/\/  (SmoothGradient|SmoothGradientTests)
+      \/\/
+      \/\/  Copyright \(c\) \d{4}(-\d{4})? Ramon Torres
+      \/\/
+      \/\/  This file is part of SmoothGradient which is released under the MIT license\.
+      \/\/  See the LICENSE file in the root directory of this source tree for full details\.
+      \/\/
+
+file_name:
+  suffix_pattern: "[+-]{1}.*"
+
+line_length:
+  warning: 130
+  error: 150
+  ignores_urls: true
+  ignores_comments: true
+
+implicit_return:
+  included:
+    - closure
+    - getter
