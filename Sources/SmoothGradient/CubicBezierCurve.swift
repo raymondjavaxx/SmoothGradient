@@ -88,7 +88,7 @@ extension CubicBezierCurve {
 
 // MARK: - Preview
 
-@available(macOS 12.0, *)
+@available(iOS 13.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 struct CubicBezierCurve_Previews: PreviewProvider {
     static var previews: some View {
         Canvas(opaque: true) { context, size in
