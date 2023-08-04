@@ -12,7 +12,16 @@ import SwiftUI
 
 // MARK: - iOS 17
 
+#if compiler(>=5.9)
 extension Gradient {
+    // Creates a gradient with the given easing function.
+    //
+    // - Parameters:
+    //   - from: The start color.
+    //   - to: The end color.
+    //   - curve: The easing function to use.
+    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    // - Returns: A gradient.
     @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
     public static func smooth(
         from: Color,
@@ -28,6 +37,14 @@ extension Gradient {
         )
     }
 
+    // Creates a gradient with the given easing function.
+    //
+    // - Parameters:
+    //   - from: The start color.
+    //   - to: The end color.
+    //   - curve: The easing function to use.
+    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    // - Returns: A gradient.
     @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
     public static func smooth(
         from: Stop,
@@ -43,10 +60,19 @@ extension Gradient {
         )
     }
 }
+#endif
 
 // MARK: - Pre iOS 17
 
 extension Gradient {
+    // Creates a gradient with the given easing function.
+    //
+    // - Parameters:
+    //   - from: The start color.
+    //   - to: The end color.
+    //   - curve: The easing function to use.
+    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    // - Returns: A gradient.
     @available(iOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
     @available(macOS, introduced: 10.15, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
     @available(tvOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
@@ -66,6 +92,14 @@ extension Gradient {
         )
     }
 
+    // Creates a gradient with the given easing function.
+    //
+    // - Parameters:
+    //   - from: The start color.
+    //   - to: The end color.
+    //   - curve: The easing function to use.
+    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    // - Returns: A gradient.
     @available(iOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
     @available(macOS, introduced: 10.15, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
     @available(tvOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
@@ -119,29 +153,16 @@ extension Gradient {
 struct Gradient_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            if #available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *) {
-                LinearGradient(
-                    gradient: .smooth(
-                        from: .black,
-                        to: .black.opacity(0),
-                        curve: .easeInOut
-                    ),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 200)
-            } else {
-                LinearGradient(
-                    gradient: .smooth(
-                        from: .black,
-                        to: .black.opacity(0),
-                        easing: .easeInOut
-                    ),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 200)
-            }
+            LinearGradient(
+                gradient: .smooth(
+                    from: .black,
+                    to: .black.opacity(0),
+                    easing: .easeInOut
+                ),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: 200)
             Spacer()
         }
         .background(Color.white, alignment: .center)

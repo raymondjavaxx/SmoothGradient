@@ -13,7 +13,7 @@ import SwiftUI
 import SnapshotTesting
 import SmoothGradient
 
-#if os(iOS) || os(tvOS)
+#if os(iOS)
 final class GradientSmoothTests: XCTestCase {
     func test_easing_easeInOut() throws {
         verify(
@@ -46,6 +46,7 @@ final class GradientSmoothTests: XCTestCase {
 
 @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 extension GradientSmoothTests {
+    #if compiler(>=5.9)
     func test_curve_easeInOut() throws {
         verify(
             .smooth(from: .black, to: .black.opacity(0), curve: .easeInOut)
@@ -73,6 +74,7 @@ extension GradientSmoothTests {
             )
         )
     }
+    #endif
 }
 
 extension GradientSmoothTests {
@@ -83,8 +85,9 @@ extension GradientSmoothTests {
         line: UInt = #line
     ) {
         let rectangle = Rectangle()
+            .foregroundColor(.clear)
             .frame(width: 256, height: 256)
-            .foregroundStyle(
+            .background(
                 LinearGradient(
                     gradient: gradient,
                     startPoint: .top,

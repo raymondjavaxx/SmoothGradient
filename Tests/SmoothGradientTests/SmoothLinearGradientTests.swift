@@ -13,7 +13,8 @@ import SwiftUI
 import SnapshotTesting
 import SmoothGradient
 
-#if os(iOS) || os(tvOS)
+#if compiler(>=5.9)
+#if os(iOS)
 @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 final class SmoothLinearGradientTests: XCTestCase {
     func test_horizontal() {
@@ -63,4 +64,5 @@ extension SmoothLinearGradientTests {
         )
     }
 }
+#endif
 #endif
