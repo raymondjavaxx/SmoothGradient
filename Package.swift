@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "SmoothGradient",
     platforms: [
-        .iOS(.v15),
+        .iOS(.v14),
         .macOS(.v11),
         .macCatalyst(.v13),
         .tvOS(.v14),
