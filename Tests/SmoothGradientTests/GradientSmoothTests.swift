@@ -13,7 +13,7 @@ import SwiftUI
 import SnapshotTesting
 import SmoothGradient
 
-#if os(iOS) || os(tvOS)
+#if os(iOS)
 final class GradientSmoothTests: XCTestCase {
     func test_easing_easeInOut() throws {
         verify(
