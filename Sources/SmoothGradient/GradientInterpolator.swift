@@ -16,10 +16,6 @@ import AppKit
 #endif
 
 struct GradientInterpolator {
-    let curve: Curve
-    let color1: Color
-    let color2: Color
-
     #if canImport(UIKit)
     /// Alias of UIColor.
     private typealias PlatformColor = UIColor
@@ -28,10 +24,17 @@ struct GradientInterpolator {
     private typealias PlatformColor = NSColor
     #endif
 
-    func blend(progress: Double) -> Color {
-        let color1 = PlatformColor(self.color1)
-        let color2 = PlatformColor(self.color2)
+    private let curve: Curve
+    private let color1: PlatformColor
+    private let color2: PlatformColor
 
+    init(curve: Curve, color1: Color, color2: Color) {
+        self.curve = curve
+        self.color1 = PlatformColor(color1)
+        self.color2 = PlatformColor(color2)
+    }
+
+    func blend(progress: Double) -> Color {
         // Use a dynamic color to ensure that the gradient is updated when the
         // system appearance changes.
         return Color(Self.makeDynamicColor {
