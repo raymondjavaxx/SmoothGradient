@@ -12,6 +12,7 @@ import SwiftUI
 
 // MARK: - iOS 17
 
+#if compiler(>=5.9)
 extension Gradient {
     @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
     public static func smooth(
@@ -43,6 +44,7 @@ extension Gradient {
         )
     }
 }
+#endif
 
 // MARK: - Pre iOS 17
 
@@ -119,29 +121,16 @@ extension Gradient {
 struct Gradient_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            if #available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *) {
-                LinearGradient(
-                    gradient: .smooth(
-                        from: .black,
-                        to: .black.opacity(0),
-                        curve: .easeInOut
-                    ),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 200)
-            } else {
-                LinearGradient(
-                    gradient: .smooth(
-                        from: .black,
-                        to: .black.opacity(0),
-                        easing: .easeInOut
-                    ),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 200)
-            }
+            LinearGradient(
+                gradient: .smooth(
+                    from: .black,
+                    to: .black.opacity(0),
+                    easing: .easeInOut
+                ),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: 200)
             Spacer()
         }
         .background(Color.white, alignment: .center)

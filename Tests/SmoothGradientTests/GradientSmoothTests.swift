@@ -46,6 +46,7 @@ final class GradientSmoothTests: XCTestCase {
 
 @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 extension GradientSmoothTests {
+    #if compiler(>=5.9)
     func test_curve_easeInOut() throws {
         verify(
             .smooth(from: .black, to: .black.opacity(0), curve: .easeInOut)
@@ -73,6 +74,7 @@ extension GradientSmoothTests {
             )
         )
     }
+    #endif
 }
 
 extension GradientSmoothTests {
