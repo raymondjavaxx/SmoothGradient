@@ -85,8 +85,9 @@ extension GradientSmoothTests {
         line: UInt = #line
     ) {
         let rectangle = Rectangle()
+            .foregroundColor(.clear)
             .frame(width: 256, height: 256)
-            .foregroundStyle(
+            .background(
                 LinearGradient(
                     gradient: gradient,
                     startPoint: .top,
