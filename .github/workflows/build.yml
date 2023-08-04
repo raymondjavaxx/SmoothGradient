@@ -19,6 +19,9 @@ jobs:
     runs-on: macos-13
     steps:
       - uses: actions/checkout@v3
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '14.3.1'
       - name: Run tests
         run: swift test -v
   build-other-platforms:
@@ -37,10 +40,10 @@ jobs:
             name: watchOS
             value: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
     steps:
+      - uses: actions/checkout@v3
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '14.3.1'
-      - uses: actions/checkout@v3
       - name: Build
         run: |-
           set -o pipefail && NSUnbufferedIO=YES xcodebuild clean build \
