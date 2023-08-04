@@ -1,0 +1,53 @@
+name: Build
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/build.yml'
+      - '**.swift'
+  pull_request:
+    paths:
+      - '.github/workflows/build.yml'
+      - '**.swift'
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-macos:
+    name: Build macOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: swift test -v
+  build-other-platforms:
+    runs-on: macos-latest
+    name: Build ${{ matrix.destination.name }}
+    strategy:
+      matrix:
+        destination:
+          -
+            name: iOS
+            value: "platform=iOS Simulator,name=iPhone 14,OS=latest"
+          -
+            name: tvOS
+            value: "platform=tvOS Simulator,name=Apple TV,OS=latest"
+          - 
+            name: watchOS
+            value: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: |-
+          set -o pipefail && NSUnbufferedIO=YES xcodebuild clean build \
+            -scheme SmoothGradient \
+            -destination '${{ matrix.destination.value }}' \
+            | xcpretty
+      - name: Run tests
+        run: |-
+          set -o pipefail && NSUnbufferedIO=YES xcodebuild test \
+            -scheme SmoothGradient \
+            -destination '${{ matrix.destination.value }}' \
+            -sdk iphonesimulator \
+            | xcpretty
