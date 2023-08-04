@@ -14,6 +14,10 @@ import SwiftUI
 ///
 /// A Cubic Bezier is defined by four points: p0, p1, ..., p3). For our purpose,
 /// p0 and p3 are always fixed  at (0, 0) and (1, 1), respectively.
+@available(iOS, introduced: 13.0, deprecated: 17.0, message: "use UnitCurve instead")
+@available(macOS, introduced: 10.15, deprecated: 14.0, message: "use UnitCurve instead")
+@available(tvOS, introduced: 13.0, deprecated: 17.0, message: "use UnitCurve instead")
+@available(watchOS, introduced: 6.0, deprecated: 10.0, message: "use UnitCurve instead")
 public struct CubicBezierCurve: Curve {
     let p1: UnitPoint
     let p2: UnitPoint
