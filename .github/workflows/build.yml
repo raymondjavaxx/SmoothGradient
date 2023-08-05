@@ -21,7 +21,7 @@ jobs:
       matrix:
         destination:
           - name: macOS
-            value: "platform=macOS,arch=arm64"
+            value: "platform=macOS,arch=x86_64"
           -
             name: iOS
             value: "platform=iOS Simulator,name=iPhone 14,OS=latest"
