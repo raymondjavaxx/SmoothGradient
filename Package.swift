@@ -32,8 +32,10 @@ let package = Package(
             dependencies: [
                 "SmoothGradient",
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
+            ],
+            exclude: [
+                "__Snapshots__"
             ]
         )
     ]
 )
-
