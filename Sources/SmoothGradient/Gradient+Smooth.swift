@@ -73,10 +73,10 @@ extension Gradient {
     //   - curve: The easing function to use.
     //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
     // - Returns: A gradient.
-    @available(iOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
-    @available(macOS, introduced: 10.15, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
-    @available(tvOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
-    @available(watchOS, introduced: 6.0, deprecated: 10.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(iOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(macOS, introduced: 11.0, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(tvOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(watchOS, introduced: 7.0, deprecated: 10.0, renamed: "smooth(from:to:curve:steps:)")
     @_disfavoredOverload
     public static func smooth(
         from: Color,
@@ -100,10 +100,10 @@ extension Gradient {
     //   - curve: The easing function to use.
     //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
     // - Returns: A gradient.
-    @available(iOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
-    @available(macOS, introduced: 10.15, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
-    @available(tvOS, introduced: 13.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
-    @available(watchOS, introduced: 6.0, deprecated: 10.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(iOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(macOS, introduced: 11.0, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(tvOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(watchOS, introduced: 7.0, deprecated: 10.0, renamed: "smooth(from:to:curve:steps:)")
     @_disfavoredOverload
     public static func smooth(
         from: Stop,

@@ -5,9 +5,9 @@ import PackageDescription
 let package = Package(
     name: "SmoothGradient",
     platforms: [
-        .iOS(.v15),
+        .iOS(.v14),
         .macOS(.v11),
-        .macCatalyst(.v13),
+        .macCatalyst(.v14),
         .tvOS(.v14),
         .watchOS(.v7)
     ],
@@ -32,6 +32,9 @@ let package = Package(
             dependencies: [
                 "SmoothGradient",
                 .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
+            ],
+            exclude: [
+                "__Snapshots__"
             ]
         )
     ]
