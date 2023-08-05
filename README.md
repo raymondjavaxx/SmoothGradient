@@ -33,7 +33,7 @@ pod 'SmoothGradient', '~> 1.0.0'
 
 ## Usage
 
-### Pre-iOS 17
+### Pre-iOS 17/Pre-macOS 14
 
 ```swift
 import SmoothGradient
@@ -49,7 +49,7 @@ struct ContentView: View {
 }
 ```
 
-## iOS 17+
+## iOS 17+/macOS 14+
 
 ```swift
 import SmoothGradient
@@ -59,9 +59,9 @@ struct ContentView: View {
         SmoothLinearGradient( // ⬅️
             from: .black,
             to: .white,
-            curve: .easeInOut,
             startPoint: .top,
-            endPoint: .bottom
+            endPoint: .bottom,
+            curve: .easeInOut
         )
     }
 }
