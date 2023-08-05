@@ -41,7 +41,7 @@ import SmoothGradient
 struct ContentView: View {
     var body: some View {
         LinearGradient(
-            gradient: .smooth(from: .black, to: .white, curve: .easeInOut),
+            gradient: .smooth(from: .black, to: .white, curve: .easeInOut), // ⬅️
             startPoint: .top,
             endPoint: .bottom
         )
@@ -56,7 +56,7 @@ import SmoothGradient
 
 struct ContentView: View {
     var body: some View {
-        SmoothLinearGradient(
+        SmoothLinearGradient( // ⬅️
             from: .black,
             to: .white,
             curve: .easeInOut,
