@@ -14,14 +14,14 @@ import SwiftUI
 
 #if compiler(>=5.9)
 extension Gradient {
-    // Creates a gradient with the given easing function.
-    //
-    // - Parameters:
-    //   - from: The start color.
-    //   - to: The end color.
-    //   - curve: The easing function to use.
-    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
-    // - Returns: A gradient.
+    /// Creates a gradient with the given easing function.
+    ///
+    /// - Parameters:
+    ///   - from: The start color.
+    ///   - to: The end color.
+    ///   - curve: The easing function to use.
+    ///   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    /// - Returns: A gradient.
     @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
     public static func smooth(
         from: Color,
@@ -37,14 +37,14 @@ extension Gradient {
         )
     }
 
-    // Creates a gradient with the given easing function.
-    //
-    // - Parameters:
-    //   - from: The start color.
-    //   - to: The end color.
-    //   - curve: The easing function to use.
-    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
-    // - Returns: A gradient.
+    /// Creates a gradient with the given easing function.
+    ///
+    /// - Parameters:
+    ///   - from: The start color.
+    ///   - to: The end color.
+    ///   - curve: The easing function to use.
+    ///   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    /// - Returns: A gradient.
     @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
     public static func smooth(
         from: Stop,
@@ -65,14 +65,14 @@ extension Gradient {
 // MARK: - Pre iOS 17
 
 extension Gradient {
-    // Creates a gradient with the given easing function.
-    //
-    // - Parameters:
-    //   - from: The start color.
-    //   - to: The end color.
-    //   - curve: The easing function to use.
-    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
-    // - Returns: A gradient.
+    /// Creates a gradient with the given easing function.
+    ///
+    /// - Parameters:
+    ///   - from: The start color.
+    ///   - to: The end color.
+    ///   - curve: The easing function to use.
+    ///   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    /// - Returns: A gradient.
     @available(iOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
     @available(macOS, introduced: 11.0, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
     @available(tvOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
@@ -92,14 +92,14 @@ extension Gradient {
         )
     }
 
-    // Creates a gradient with the given easing function.
-    //
-    // - Parameters:
-    //   - from: The start color.
-    //   - to: The end color.
-    //   - curve: The easing function to use.
-    //   - steps: The number of steps to use when generating the gradient. Defaults to 16.
-    // - Returns: A gradient.
+    /// Creates a gradient with the given easing function.
+    ///
+    /// - Parameters:
+    ///   - from: The start color.
+    ///   - to: The end color.
+    ///   - curve: The easing function to use.
+    ///   - steps: The number of steps to use when generating the gradient. Defaults to 16.
+    /// - Returns: A gradient.
     @available(iOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
     @available(macOS, introduced: 11.0, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
     @available(tvOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")

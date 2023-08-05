@@ -26,21 +26,29 @@ public struct CubicBezierCurve: Curve {
     let b: CGPoint
     let c: CGPoint
 
+    /// A bezier curve that starts out slowly, then speeds up as it finishes.
     public static let easeIn = CubicBezierCurve(
         p1: UnitPoint(x: 0.42, y: 0),
         p2: UnitPoint(x: 1, y: 1)
     )
 
+    /// A bezier curve that starts out quickly, then slows down as it approaches the end.
     public static let easeOut = CubicBezierCurve(
         p1: UnitPoint(x: 0, y: 0),
         p2: UnitPoint(x: 0.58, y: 1)
     )
 
+    /// A bezier curve that starts out slowly, speeds up over the middle, then slows down again as it approaches the end.
     public static let easeInOut = CubicBezierCurve(
         p1: UnitPoint(x: 0.42, y: 0),
         p2: UnitPoint(x: 0.58, y: 1)
     )
 
+    /// Creates a new Cubic Bezier curve with the given control points.
+    ///
+    /// - Parameters:
+    ///   - p1: Control point 1.
+    ///   - p2: Control point 2.
     public init(p1: UnitPoint, p2: UnitPoint) {
         self.p1 = p1
         self.p2 = p2

@@ -11,6 +11,7 @@
 import SwiftUI
 
 #if compiler(>=5.9)
+/// A smooth linear gradient.
 @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 public struct SmoothLinearGradient: ShapeStyle, View {
     let from: Gradient.Stop
@@ -20,6 +21,15 @@ public struct SmoothLinearGradient: ShapeStyle, View {
     let curve: UnitCurve
     let steps: Int
 
+    /// Creates a smooth gradient from two colors.
+    ///
+    /// - Parameters:
+    ///   - from: The start color.
+    ///   - to: The end color.
+    ///   - startPoint: Origin of the gradient.
+    ///   - endPoint: End point of the gradient. Together with `startPoint` defines the gradient's direction.
+    ///   - curve: Easing curve to use.
+    ///   - steps: Number of steps to use when generating the gradient. Defaults to 16.
     public init(
         from: Color,
         to: Color,
@@ -38,6 +48,15 @@ public struct SmoothLinearGradient: ShapeStyle, View {
         )
     }
 
+    /// Creates a smooth gradient from two color stops.
+    ///
+    /// - Parameters:
+    ///   - from: The start color.
+    ///   - to: The end color.
+    ///   - startPoint: Origin of the gradient.
+    ///   - endPoint: End point of the gradient. Together with `startPoint` defines the gradient's direction.
+    ///   - curve: Easing curve to use.
+    ///   - steps: Number of steps to use when generating the gradient. Defaults to 16.
     public init(
         from: Gradient.Stop,
         to: Gradient.Stop,
