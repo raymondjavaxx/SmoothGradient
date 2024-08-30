@@ -2,9 +2,9 @@ name: Lint
 on:
   pull_request:
     paths:
-      - '.github/workflows/lint.yml'
-      - '.swiftlint.yml'
-      - '**/*.swift'
+      - ".github/workflows/lint.yml"
+      - ".swiftlint.yml"
+      - "**/*.swift"
 jobs:
   lint:
     runs-on: ubuntu-latest

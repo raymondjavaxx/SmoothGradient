@@ -2,7 +2,7 @@
 //  CubicBezierCurve.swift
 //  SmoothGradient
 //
-//  Copyright (c) 2023 Ramon Torres
+//  Copyright (c) 2023-2024 Ramon Torres
 //
 //  This file is part of SmoothGradient which is released under the MIT license.
 //  See the LICENSE file in the root directory of this source tree for full details.
@@ -18,6 +18,7 @@ import SwiftUI
 @available(macOS, introduced: 11.0, deprecated: 14.0, message: "use UnitCurve instead")
 @available(tvOS, introduced: 14.0, deprecated: 17.0, message: "use UnitCurve instead")
 @available(watchOS, introduced: 7.0, deprecated: 10.0, message: "use UnitCurve instead")
+@available(visionOS, deprecated: 1.0, message: "use UnitCurve instead")
 public struct CubicBezierCurve: Curve {
     let p1: UnitPoint
     let p2: UnitPoint
@@ -63,9 +64,7 @@ public struct CubicBezierCurve: Curve {
         guard p1 != p2 else { return x }
         return sampleCurveY(getT(x: x))
     }
-}
 
-extension CubicBezierCurve {
     private func getT(x: Double) -> Double {
         assert(x >= 0 && x <= 1, "x must be between 0 and 1")
 
@@ -100,7 +99,8 @@ extension CubicBezierCurve {
 
 // MARK: - Preview
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+#if compiler(>=5.9)
+@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 struct CubicBezierCurve_Previews: PreviewProvider {
     static var previews: some View {
         Canvas(opaque: true) { context, size in
@@ -147,10 +147,11 @@ struct CubicBezierCurve_Previews: PreviewProvider {
                     color: CGColor(red: 0, green: 1, blue: 0, alpha: 1),
                     dashed: true
                 ) { progress in
-                    CubicBezierCurve.easeInOut.value(at: progress)
+                    UnitCurve.easeInOut.value(at: progress)
                 }
             }
         }
         .frame(width: 400, height: 400)
     }
 }
+#endif

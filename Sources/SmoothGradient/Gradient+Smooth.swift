@@ -2,7 +2,7 @@
 //  Gradient+Smooth.swift
 //  SmoothGradient
 //
-//  Copyright (c) 2023 Ramon Torres
+//  Copyright (c) 2023-2024 Ramon Torres
 //
 //  This file is part of SmoothGradient which is released under the MIT license.
 //  See the LICENSE file in the root directory of this source tree for full details.
@@ -77,6 +77,7 @@ extension Gradient {
     @available(macOS, introduced: 11.0, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
     @available(tvOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
     @available(watchOS, introduced: 7.0, deprecated: 10.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(visionOS, deprecated: 1.0, renamed: "smooth(from:to:curve:steps:)")
     @_disfavoredOverload
     public static func smooth(
         from: Color,
@@ -104,6 +105,7 @@ extension Gradient {
     @available(macOS, introduced: 11.0, deprecated: 14.0, renamed: "smooth(from:to:curve:steps:)")
     @available(tvOS, introduced: 14.0, deprecated: 17.0, renamed: "smooth(from:to:curve:steps:)")
     @available(watchOS, introduced: 7.0, deprecated: 10.0, renamed: "smooth(from:to:curve:steps:)")
+    @available(visionOS, deprecated: 1.0, renamed: "smooth(from:to:curve:steps:)")
     @_disfavoredOverload
     public static func smooth(
         from: Stop,

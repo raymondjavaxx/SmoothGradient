@@ -2,7 +2,7 @@
 //  Curve.swift
 //  SmoothGradient
 //
-//  Copyright (c) 2023 Ramon Torres
+//  Copyright (c) 2023-2024 Ramon Torres
 //
 //  This file is part of SmoothGradient which is released under the MIT license.
 //  See the LICENSE file in the root directory of this source tree for full details.
