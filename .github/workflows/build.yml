@@ -28,8 +28,6 @@ jobs:
             value: "platform=tvOS Simulator,name=Apple TV,OS=latest"
           - name: watchOS
             value: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm),OS=latest"
-          - name: visionOS
-            value: "generic/platform=visionOS"
     steps:
       - uses: actions/checkout@v3
       - uses: maxim-lobanov/setup-xcode@v1
