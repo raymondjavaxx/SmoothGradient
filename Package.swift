@@ -26,7 +26,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SmoothGradient"
+            name: "SmoothGradient",
+            resources: [
+                .process("PrivacyInfo.xcprivacy")
+            ]
         ),
         .testTarget(
             name: "SmoothGradientTests",

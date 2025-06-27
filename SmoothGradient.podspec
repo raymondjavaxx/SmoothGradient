@@ -15,4 +15,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/raymondjavaxx/SmoothGradient.git", :tag => "#{spec.version}" }
   spec.source_files = "Sources/SmoothGradient/**/*.swift"
+  spec.resources = [
+    "Sources/SmoothGradient/PrivacyInfo.xcprivacy"
+  ]
 end
