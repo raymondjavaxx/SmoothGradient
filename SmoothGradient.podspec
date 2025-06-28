@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SmoothGradient"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "A SwiftUI package for creating smooth gradients using easing functions."
 
   spec.homepage     = "https://github.com/raymondjavaxx/SmoothGradient"
