@@ -74,8 +74,23 @@ public struct SmoothLinearGradient: ShapeStyle, View {
     }
 
     public func resolve(in environment: EnvironmentValues) -> LinearGradient {
-        LinearGradient(
-            gradient: .smooth(from: from, to: to, curve: curve, steps: steps),
+        let resolvedFrom = Gradient.Stop(
+            color: Color(from.color.resolve(in: environment)),
+            location: from.location
+        )
+
+        let resolvedTo = Gradient.Stop(
+            color: Color(to.color.resolve(in: environment)),
+            location: to.location
+        )
+
+        return LinearGradient(
+            gradient: .smooth(
+                from: resolvedFrom,
+                to: resolvedTo,
+                curve: curve,
+                steps: steps
+            ),
             startPoint: startPoint,
             endPoint: endPoint
         )
